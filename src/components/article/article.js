@@ -93,8 +93,7 @@ const data = [
     date: 'Mar 9, 1666',
     firstParagraph: `The big cheese cut the cheese smelly cheese. Feta queso cheesecake stinking bishop fromage frais melted cheese fromage frais roquefort. St. agur blue cheese queso pepper jack cheese and biscuits when the cheese comes out everybody's happy cheese and wine bavarian bergkase fondue. When the cheese comes out everybody's happy port-salut rubber cheese stilton taleggio.`,
     secondParagraph: `Cream cheese mozzarella gouda. When the cheese comes out everybody's happy hard cheese edam stinking bishop mozzarella caerphilly danish fontina airedale. Roquefort airedale blue castello cheesy feet stilton gouda cheese on toast everyone loves. Macaroni cheese camembert de normandie bavarian bergkase.`,
-    ThirdParagraph: `Everyone loves cow hard cheese. Pecorino mascarpone blue castello feta squirty cheese danish fontina cheeseburger lancashire. Chalk and cheese halloumi hard cheese rubber cheese blue castello swiss caerphilly cheesecake. Who moved my cheese pecorino dolcelatte camembert de normandie cheese triangles dolcelatte cheesy grin halloumi. Melted cheese cottage cheese edam bavarian bergkase.`
-
+    thirdParagraph: `Everyone loves cow hard cheese. Pecorino mascarpone blue castello feta squirty cheese danish fontina cheeseburger lancashire. Chalk and cheese halloumi hard cheese rubber cheese blue castello swiss caerphilly cheesecake. Who moved my cheese pecorino dolcelatte camembert de normandie cheese triangles dolcelatte cheesy grin halloumi. Melted cheese cottage cheese edam bavarian bergkase.`
   }
 ];
 const articles=document.querySelector('.articles');
@@ -126,11 +125,14 @@ const articles=document.querySelector('.articles');
     firstParagraph.textContent=data.firstParagraph;
     secondParagraph.textContent=data.secondParagraph;
     thirdParagraph.textContent=data.thirdParagraph;
+    button.textContent='+';
 
     
     // Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
     // This listener should toggle the class 'article-open' on div.article.
-    
+    button.addEventListener('click', () => {
+      article.classList.toggle('article-open');
+    })
   
     return article;
   }
